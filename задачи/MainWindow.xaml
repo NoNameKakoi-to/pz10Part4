@@ -1,0 +1,60 @@
+﻿<Window x:Class="задачи.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:задачи"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="433" Width="820">
+    <Grid Margin="0,0,0,9" HorizontalAlignment="Left" Width="813">
+        <ListBox Name="NotCompl"
+                    Margin="10,37,442,110" Width="361" Height="261.04" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="20"
+                                       Text= "{Binding Task}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Name="Compl"
+                 Margin="429,37,0,0" Width="361" Height="310" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="20"
+                                       Text= "{Binding Task}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="AddInNotCompl" Content="&lt;" HorizontalAlignment="Left" Height="30" Margin="382,192,0,0" VerticalAlignment="Top" Width="32" FontSize="18" FontFamily="Algerian" Click="AddInNotCompl_Click" Background="White"/>
+        <Button x:Name="AddInCompl" Content="&gt;" HorizontalAlignment="Left" Height="30" Margin="382,138,0,0" VerticalAlignment="Top" Width="32" FontSize="18" FontFamily="Algerian" Click="AddInCompl_Click" Background="White" RenderTransformOrigin="0.768,3.108"/>
+        <Button x:Name="Add" Content="Добавить задачу" HorizontalAlignment="Left" Margin="10,352,0,0" VerticalAlignment="Top" Height="23" Width="117" Background="White" Click="Add_Click"/>
+        <TextBox x:Name="AddTextBox" HorizontalAlignment="Left" Height="44" Margin="10,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" AllowDrop="True" TextChanged="AddTextBox_TextChanged"/>
+        <Button x:Name="Delete2" Content="Удалить задачу" HorizontalAlignment="Left" Margin="673,352,0,0" VerticalAlignment="Top" Height="23" Width="117" Background="White" Click="Delete2_Click"/>
+        <Button x:Name="Delete" Content="Удалить задачу" HorizontalAlignment="Left" Margin="132,352,0,0" VerticalAlignment="Top" Height="23" Width="117" Background="White" Click="Delete_Click"/>
+        <Label Content="Не выполненный задачи" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.992"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.365"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Выполненный задачи" HorizontalAlignment="Left" Height="27" Margin="426,12,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.368,0.176">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="1.992"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.061"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+    </Grid>
+</Window>
